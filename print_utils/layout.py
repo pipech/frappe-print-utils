@@ -7,6 +7,7 @@ def get_print_layout(
     paper_size='A4',
     orientation='Portrait',
     margin=10,
+    font_size='14px',
 ):
     """
     Args:
@@ -15,6 +16,7 @@ def get_print_layout(
             or custom paper size in mm {'width': x, 'height': y}
         orientation (str): orientation of the paper ('Portrait' or 'Landscape')
         margin (int): margin in mm
+        font_size (str): css font size ('14pt', '14px', ...)
 
     Return:
         (str): html layout
@@ -42,6 +44,7 @@ def get_print_layout(
             'width': paper_width,
             'height': paper_height,
             'margin': margin,
+            'font_size': font_size,
         },
         is_path=True,
     )
