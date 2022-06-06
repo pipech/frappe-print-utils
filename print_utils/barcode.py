@@ -4,7 +4,7 @@ import io
 import base64
 
 
-def get_barcode_img(data, barcode_class):
+def get_barcode_img(data, barcode_class, options=None):
     # make barcode
     barcode_obj = barcode.get_barcode_class(barcode_class)
     barcode_img = barcode_obj(
@@ -14,7 +14,7 @@ def get_barcode_img(data, barcode_class):
 
     # stream img
     stream = io.BytesIO()
-    barcode_img.write(stream)
+    barcode_img.write(stream, options=options)
 
     # make img tag from stream
     img_src = 'data: image/png;base64, ' + \
