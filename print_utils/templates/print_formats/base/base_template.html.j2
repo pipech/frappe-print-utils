@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{ title }}</title>
+
+  {# include bootstrap and print.scss build from build.json #}
+  {{ include_style("printview.css") }}
+
+	<style>
+    {% include "print_utils/templates/print_formats/base/base_style.css.j2" %}
+	</style>
+</head>
+
+<body>
+	<div class="print-format-gutter">
+    <div class="print-format">
+		{{ body }}
+    </div>
+	</div>
+
+  {# copied from frappe/frappe/www/printview.html #}
+  <script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const page_div = document.querySelector('.page-break');
+
+			page_div.style.display = 'flex';
+			page_div.style.flexDirection = 'column';
+
+			const footer_html = document.getElementById('footer-html');
+			footer_html.classList.add('hidden-pdf');
+			footer_html.classList.remove('visible-pdf');
+			footer_html.style.order = 1;
+			footer_html.style.marginTop = '20px';
+		});
+	</script>
+</body>
+
+</html>

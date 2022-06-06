@@ -1,1 +1,3 @@
 # frappe -- https://github.com/frappe/frappe is installed via 'bench init'
+python-barcode==0.14.0
+qrcode==7.3.1
