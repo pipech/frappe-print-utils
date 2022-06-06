@@ -5,6 +5,15 @@ import base64
 
 
 def get_barcode_img(data, barcode_class, options=None):
+    """
+    Args:
+        data(str): barcode data
+        barcode_class(str): barcode class such as ean13
+        options(dict): https://python-barcode.readthedocs.io/en/stable/writers.html#common-writer-options
+
+    Return:
+        (str): html img tag
+    """
     # make barcode
     barcode_obj = barcode.get_barcode_class(barcode_class)
     barcode_img = barcode_obj(
