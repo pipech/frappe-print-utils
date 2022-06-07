@@ -2,6 +2,11 @@
 {# ---------- #}
 @import url("https://fonts.googleapis.com/css?family=Sarabun:400,600,800");
 
+{# This will make rem works nicely #}
+html {
+	font-size: {{ font_size }} !important;
+}
+
 {# style from templates/styles/standard #}
 {# ---------- #}
 @media screen {
@@ -141,11 +146,6 @@ table.no-border, table.no-border td {
 	font-weight: bold;
 }
 
-.print-format td, .print-format th {
-	vertical-align: top !important;
-	padding: 6px !important;
-}
-
 .print-format p {
 	margin: 3px 0px 3px;
 }
@@ -197,7 +197,6 @@ table td div {
 }
 
 .print-format th {
-	background-color: #eee !important;
 	border-bottom: 0px !important;
 }
 
