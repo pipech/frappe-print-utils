@@ -24,6 +24,13 @@ page-height:{{ height }}mm||
 </head>
 
 <body>
+	{# header-html, footer-html is here to prevent
+	frappe.utils.pdf.prepare_header_footer
+	from hard-code margin-top and margin-bottom into options
+	#}
+	<div id="header-html" class="hidden-pdf"></div>
+	<div id="footer-html" class="hidden-pdf"></div>
+
 	<div class="print-format-gutter">
     <div class="print-format">
 		{{ body }}
