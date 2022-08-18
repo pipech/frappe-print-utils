@@ -15,6 +15,7 @@ def get_qrcode_img(data, error_correction='~15%'):
     # make qrcode
     qr = qrcode.QRCode(
         error_correction=error_correct_map[error_correction],
+        border=1,
     )
     qr.add_data(data)
     qr.make()

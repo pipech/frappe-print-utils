@@ -28,6 +28,6 @@ def get_barcode_img(data, barcode_class, options=None):
     # make img tag from stream
     img_src = 'data: image/png;base64, ' + \
         base64.b64encode(stream.getvalue()).decode('utf-8')
-    barcode_html = '<img src="{}" />'.format(img_src)
+    barcode_html = '<img width="100%" src="{}" />'.format(img_src)
 
     return barcode_html
