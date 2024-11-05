@@ -9,9 +9,9 @@ app_color = "grey"
 app_email = "p@spacecode.co.th"
 app_license = "MIT"
 
-jenv = {
-    'methods': [
-        'get_qrcode_img:print_utils.qrcode.get_qrcode_img',
-        'get_barcode_img:print_utils.barcode.get_barcode_img',
-    ],
+jinja = {
+	"methods": [
+		"print_utils.qrcode.get_qrcode_img",
+		"print_utils.barcode.get_barcode_img",
+	],
 }
